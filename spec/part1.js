@@ -342,7 +342,7 @@
         expect(uniqueNumbers).to.not.equal(numbers);
       });
 
-      xit('should maintain same array length', function() {
+      it('should maintain same array length', function() {
         var numbers = [1, 1, 2, 3];
         var shuffled = _.shuffle(numbers);
 
@@ -406,7 +406,7 @@
           { name: 'curly', age: 50 }
         ];
 
-        expect(_.pluck(people, 'name')).to.FILL_ME_IN(['moe', 'curly']);
+        expect(_.pluck(people, 'name')).to.eql(['moe', 'curly']);
       });
 
       it('should not modify the original array', function() {
@@ -417,7 +417,7 @@
 
         _.pluck(people, 'name');
 
-        expect(people).to.FILL_ME_IN([{ name: 'moe', age: 30 }, { name: 'curly', age: 50 }]);
+        expect(people).to.eql([{ name: 'moe', age: 30 }, { name: 'curly', age: 50 }]);
       });
     });
 
@@ -474,7 +474,7 @@
         var orderTraversed = [];
 
         _.reduce([1, 2, 3, 4], function(memo, item) {
-          // FILL_ME_IN
+          orderTraversed.push(item);
           // Add a line here that makes this test pass
           // for a working implementation of reduce
           return memo;
