@@ -115,22 +115,29 @@
     var arr = [];
     var obj = {};
     for(var i = 0; i <array.length;i++){
-      if(!obj[array[i]]) {
-        obj[array[i]] = array[i];
-      }
-      for (var key in obj) {
-        arr.push(obj[key]);
-      }
-      return arr;
+      //if(!obj[array[i]]) {
+      obj[array[i]] = array[i];
     }
+    for (var key in obj) {
+      arr.push(obj[key]);
+    }
+    return arr;
+
   };
 
 
   // Return the results of applying an iterator to each element.
+  //
   _.map = function(collection, iterator) {
     // map() is a useful primitive iteration function that works a lot
     // like each(), but in addition to running the operation on all
     // the members, it also maintains an array of results.
+    var arr = [];
+    _.each(collection, function(value, key, collection) {
+      arr.push(iterator(value, key, collection));
+    });
+    return arr;
+
   };
 
   /*
